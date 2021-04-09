@@ -40,8 +40,9 @@ func (t Task) RunTask(request interface{}) {
 func main() {
 
 	// 设置线程池的大小
-	num := 100 * 100 * 20
-	workerPool := threadpool.GetWorkerPool(num)
+	poolNum := 100 * 100 * 20
+    jobQueueNum := 100
+	workerPool := threadpool.GetWorkerPool(poolNum, jobQueueNum)
 	workerPool.Start()
 
 	// 模拟百万请求

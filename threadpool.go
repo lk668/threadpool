@@ -17,17 +17,17 @@ type WorkerPool struct {
 }
 
 // 单例模式来获取WorkerPool
-func GetWorkerPool(poolSize int) *WorkerPool {
+func GetWorkerPool(poolSize, jobQueueLen int) *WorkerPool {
 	once.Do(func() {
-		workerPool = NewWorkerPool(poolSize)
+		workerPool = NewWorkerPool(poolSize, jobQueueLen)
 	})
 	return workerPool
 }
 
-func NewWorkerPool(poolSize int) *WorkerPool {
+func NewWorkerPool(poolSize, jobQueueLen int) *WorkerPool {
 	return &WorkerPool{
 		poolSize,
-		make(JobChan),
+		make(JobChan, jobQueueLen),
 		make(chan *Worker, poolSize),
 	}
 }
