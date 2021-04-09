@@ -4,7 +4,7 @@
 
 # 简介
 
-TODO
+参考我的博客[Golang线程池实现百万级高并发](http://lk668.github.io/2021/03/22/2021-03-22-Golang%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E7%99%BE%E4%B8%87%E7%BA%A7%E9%AB%98%E5%B9%B6%E5%8F%91/)
 
 # 安装
 
